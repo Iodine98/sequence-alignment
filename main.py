@@ -33,12 +33,7 @@ class SequenceAlignment(SequenceAlignmentData):
         sequence_alignment_matrix: ndarray = np.zeros(dimensions, dtype=np.int16)
         i_dimension, j_dimension = dimensions
         for i in range(i_dimension):
-            for j in range(j_dimension):
-                sequence_alignment_matrix[i, j] = max(
-                    sequence_alignment_matrix[i - 1, j] + self.gap_score,
-                    sequence_alignment_matrix[i, j - 1] + self.gap_score,
-                    sequence_alignment_matrix[i - 1, j - 1] + self.S[i, j]
-                )
+            pass
         return sequence_alignment_matrix
 
 
